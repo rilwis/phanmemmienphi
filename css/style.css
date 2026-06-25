@@ -412,7 +412,7 @@ img {
   padding: var(--6);
 }
 
-.sidebar-card h3 {
+.sidebar-heading {
   font-size: var(--text-xs);
   font-weight: 600;
   text-transform: uppercase;
