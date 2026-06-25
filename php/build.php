@@ -8,7 +8,8 @@ $command = $argv[1] ?? '';
 match ($command) {
 	'index' => buildIndex(),
 	'detail' => buildDetail($argv[2] ?? ''),
-	default => die("Usage: php build.php {index|detail <slug>}\n"),
+	'sitemap' => buildSitemap(),
+	default => die("Usage: php build.php {index|detail <slug>|sitemap}\n"),
 };
 
 function buildIndex(): void {
@@ -44,4 +45,24 @@ function buildDetail(string $slug): void {
 		'description' => $sw['desc'],
 		'content'     => renderDetail($sw, $cat),
 	]);
+}
+
+function buildSitemap(): void {
+	global $SOFTWARE;
+
+	$domain = trim(file_get_contents(__DIR__ . '/../CNAME'));
+
+	$urls = ["/"];
+	foreach ($SOFTWARE as $sw) {
+		$urls[] = "/p/{$sw['id']}.html";
+	}
+
+	echo '<?xml version="1.0" encoding="UTF-8"?>' . "\n";
+	echo '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' . "\n";
+	foreach ($urls as $url) {
+		echo "  <url>\n";
+		echo "    <loc>https://{$domain}{$url}</loc>\n";
+		echo "  </url>\n";
+	}
+	echo '</urlset>' . "\n";
 }

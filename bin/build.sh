@@ -15,4 +15,7 @@ foreach ($SOFTWARE as $sw) echo $sw["id"] . "\n";
 	php php/build.php detail "$slug" > "p/$slug.html"
 done
 
+echo "Building sitemap.xml..."
+php php/build.php sitemap > sitemap.xml
+
 echo "Done."
