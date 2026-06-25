@@ -2,9 +2,9 @@
 
 $CATEGORIES = [
 	'van-phong' => ['name' => 'Văn phòng', 'order' => 1],
-	'tien-ich'  => ['name' => 'Tiện ích', 'order' => 2],
-	'media'     => ['name' => 'Media', 'order' => 3],
-	'mang'      => ['name' => 'Mạng', 'order' => 4],
+	'mang'      => ['name' => 'Mạng', 'order' => 2],
+	'tien-ich'  => ['name' => 'Tiện ích', 'order' => 3],
+	'media'     => ['name' => 'Media', 'order' => 4],
 	'bao-mat'   => ['name' => 'Bảo mật', 'order' => 5],
 ];
 
@@ -19,13 +19,13 @@ $SOFTWARE = [
 		'download' => 'https://www.onlyoffice.com/download-desktop.aspx',
 	],
 	[
-		'id'       => 'thunderbird',
-		'name'     => 'Thunderbird',
+		'id'       => 'unikey',
+		'name'     => 'Unikey',
 		'cat'      => 'van-phong',
-		'desc'     => 'Ứng dụng email và quản lý lịch làm việc miễn phí từ Mozilla. Mạnh mẽ, bảo mật, không quảng cáo.',
-		'intro'    => "Mozilla Thunderbird là ứng dụng email mã nguồn mở, mạnh mẽ và bảo mật, được phát triển bởi Mozilla – tổ chức đứng sau Firefox.\n\nThunderbird hỗ trợ quản lý nhiều tài khoản email cùng lúc, lọc thư thông minh, tích hợp lịch làm việc và sổ địa chỉ. Bạn có thể quản lý email từ Gmail, Outlook, Yahoo và bất kỳ dịch vụ email nào khác trong một giao diện duy nhất. Phần mềm hoàn toàn miễn phí, không có quảng cáo và được cập nhật thường xuyên.",
-		'url'      => 'https://www.thunderbird.net/',
-		'download' => 'https://www.thunderbird.net/download/',
+		'desc'     => 'Bộ gõ tiếng Việt phổ biến nhất trên Windows. Nhỏ gọn, miễn phí, hỗ trợ mọi kiểu gõ.',
+		'intro'    => "Unikey là bộ gõ tiếng Việt mã nguồn mở, nhỏ gọn và cực kỳ phổ biến tại Việt Nam. Đây là phần mềm không thể thiếu trên bất kỳ máy tính Windows nào của người Việt.\n\nVới Unikey, bạn có thể gõ tiếng Việt trong bất kỳ ứng dụng Windows nào một cách dễ dàng. Phần mềm hỗ trợ tất cả các kiểu gõ phổ biến như Telex, VNI, VIQR và nhiều bảng mã khác nhau. Unikey còn tích hợp công cụ chuyển đổi font chữ tiện lợi, giúp bạn chuyển đổi văn bản giữa các bảng mã một cách nhanh chóng.",
+		'url'      => 'https://unikey.org/',
+		'download' => 'https://unikey.org/download.html',
 	],
 	[
 		'id'       => 'foxit-pdf-reader',
@@ -37,13 +37,13 @@ $SOFTWARE = [
 		'download' => 'https://www.foxit.com/downloads/',
 	],
 	[
-		'id'       => 'unikey',
-		'name'     => 'Unikey',
+		'id'       => 'thunderbird',
+		'name'     => 'Thunderbird',
 		'cat'      => 'van-phong',
-		'desc'     => 'Bộ gõ tiếng Việt phổ biến nhất trên Windows. Nhỏ gọn, miễn phí, hỗ trợ mọi kiểu gõ.',
-		'intro'    => "Unikey là bộ gõ tiếng Việt mã nguồn mở, nhỏ gọn và cực kỳ phổ biến tại Việt Nam. Đây là phần mềm không thể thiếu trên bất kỳ máy tính Windows nào của người Việt.\n\nVới Unikey, bạn có thể gõ tiếng Việt trong bất kỳ ứng dụng Windows nào một cách dễ dàng. Phần mềm hỗ trợ tất cả các kiểu gõ phổ biến như Telex, VNI, VIQR và nhiều bảng mã khác nhau. Unikey còn tích hợp công cụ chuyển đổi font chữ tiện lợi, giúp bạn chuyển đổi văn bản giữa các bảng mã một cách nhanh chóng.",
-		'url'      => 'https://unikey.org/',
-		'download' => 'https://unikey.org/download.html',
+		'desc'     => 'Ứng dụng email và quản lý lịch làm việc miễn phí từ Mozilla. Mạnh mẽ, bảo mật, không quảng cáo.',
+		'intro'    => "Mozilla Thunderbird là ứng dụng email mã nguồn mở, mạnh mẽ và bảo mật, được phát triển bởi Mozilla – tổ chức đứng sau Firefox.\n\nThunderbird hỗ trợ quản lý nhiều tài khoản email cùng lúc, lọc thư thông minh, tích hợp lịch làm việc và sổ địa chỉ. Bạn có thể quản lý email từ Gmail, Outlook, Yahoo và bất kỳ dịch vụ email nào khác trong một giao diện duy nhất. Phần mềm hoàn toàn miễn phí, không có quảng cáo và được cập nhật thường xuyên.",
+		'url'      => 'https://www.thunderbird.net/',
+		'download' => 'https://www.thunderbird.net/download/',
 	],
 	[
 		'id'       => '7-zip',
