@@ -12,14 +12,19 @@ function layout(array $vars): void {
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title><?= htmlspecialchars($title) ?></title>
+	<link rel="icon" href="<?= $basePath ?>images/icon.webp">
+	<link rel="apple-touch-icon" href="<?= $basePath ?>images/icon.webp">
 	<meta name="description" content="<?= htmlspecialchars($description) ?>">
 	<link rel="stylesheet" href="<?= $basePath ?>css/style.css">
 </head>
 <body>
 	<header class="site-header">
-		<div class="container">
-			<a href="<?= $basePath ?>index.html" class="site-title">Phần mềm miễn phí</a>
-			<nav class="site-nav">
+		<div class="container flex">
+			<a href="<?= $basePath ?>index.html" class="site-title flex">
+				<img src="<?= $basePath ?>images/icon.webp" alt="Phần mềm miễn phí" width="32" height="32">
+				Phần mềm miễn phí
+			</a>
+			<nav class="site-nav flex">
 				<a href="<?= $basePath ?>index.html#van-phong">Văn phòng</a>
 				<a href="<?= $basePath ?>index.html#tien-ich">Tiện ích</a>
 				<a href="<?= $basePath ?>index.html#media">Media</a>
@@ -62,19 +67,18 @@ function renderHomepage(array $categories, array $software, array $colors): stri
 		$items = array_values(array_filter($software, fn($s) => $s['cat'] === $catId));
 		if (empty($items)) continue;
 
-		$html .= '<section class="category-section" id="' . $catId . '">
-	<div class="category-header">
-		<div class="category-icon" style="background: ' . $colors[$colorIdx % count($colors)] . '">' . mb_substr($cat['name'], 0, 1) . '</div>
+		$html .= '<section class="category" id="' . $catId . '">
+	<div class="category-header flex">
+		<div class="category-icon flex" style="background: ' . $colors[$colorIdx % count($colors)] . '">' . mb_substr($cat['name'], 0, 1) . '</div>
 		<h2>' . $cat['name'] . '</h2>
 	</div>
-	<div class="software-grid">';
-
+	<div class="grid">';
 		foreach ($items as $sw) {
-			$html .= '<a href="p/' . $sw['id'] . '.html" class="software-card">
-		<img class="software-icon" src="images/icons/' . $sw['id'] . '.webp" alt="' . htmlspecialchars($sw['name']) . '" width="48" height="48" loading="lazy">
-		<div class="software-info">
-		<h3>' . htmlspecialchars($sw['name']) . '</h3>
-		<p>' . htmlspecialchars($sw['desc']) . '</p>
+			$html .= '<a href="p/' . $sw['id'] . '.html" class="card">
+		<img class="icon" src="images/icons/' . $sw['id'] . '.webp" alt="' . htmlspecialchars($sw['name']) . '" width="48" height="48" loading="lazy">
+		<div class="info">
+			<h3>' . htmlspecialchars($sw['name']) . '</h3>
+			<p>' . htmlspecialchars($sw['desc']) . '</p>
 		</div>
 		<span class="arrow">→</span>
 	</a>';
@@ -110,26 +114,26 @@ function renderDetail(array $sw, array $cat): string {
 		<span class="separator">/</span>
 		<span>' . htmlspecialchars($sw['name']) . '</span>
 	</div>
-	<div class="detail-title">
-		<img class="detail-icon" src="../images/icons/' . $sw['id'] . '.webp" alt="' . htmlspecialchars($sw['name']) . '" width="72" height="72">
+	<div class="detail-title flex">
+		<img class="detail-icon" src="../images/icons/' . $sw['id'] . '.webp" alt="' . htmlspecialchars($sw['name']) . '" width="64" height="64">
 		<h1 class="detail-name">' . htmlspecialchars($sw['name']) . '</h1>
 	</div>
 	<p class="detail-description">' . htmlspecialchars($sw['desc']) . '</p>
 </div>
 <div class="detail-content">
 	<div class="detail-body">
-		<img class="screenshot-placeholder" src="../images/screenshots/' . $sw['id'] . '.webp" alt="Ảnh chụp màn hình ' . htmlspecialchars($sw['name']) . '" loading="lazy">
+		<img class="screenshot" src="../images/screenshots/' . $sw['id'] . '.webp" alt="Ảnh chụp màn hình ' . htmlspecialchars($sw['name']) . '" loading="lazy">
 		' . $paras . '
 	</div>
-	<aside class="detail-sidebar">
+	<aside class="sidebar">
 		<div class="sidebar-card">
-		<div class="sidebar-heading">Liên kết</div>
-		<div class="btn-group">
-			<a href="' . htmlspecialchars($sw['url']) . '" class="btn btn-primary" target="_blank" rel="noopener">
-			Trang chủ →
-			</a>
-			' . $downloadBtn . '
-		</div>
+			<div class="sidebar-heading">Liên kết</div>
+			<div class="btn-group flex">
+				<a href="' . htmlspecialchars($sw['url']) . '" class="btn btn-primary" target="_blank" rel="noopener">
+				Trang chủ →
+				</a>
+				' . $downloadBtn . '
+			</div>
 		</div>
 	</aside>
 </div>';
