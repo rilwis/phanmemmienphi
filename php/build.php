@@ -17,7 +17,6 @@ function buildIndex(): void {
 	layout([
 		'title'       => 'Phần mềm miễn phí - Tổng hợp phần mềm miễn phí tốt nhất cho văn phòng, học sinh, sinh viên',
 		'description' => 'Tổng hợp những phần mềm miễn phí tốt nhất cho văn phòng, học sinh, sinh viên và người dùng phổ thông.',
-		'basePath'    => '',
 		'content'     => renderHomepage($CATEGORIES, $SOFTWARE, $COLORS),
 	]);
 }
@@ -43,7 +42,6 @@ function buildDetail(string $slug): void {
 	layout([
 		'title'       => $sw['name'] . ' - Phần mềm miễn phí',
 		'description' => $sw['desc'],
-		'basePath'    => '../',
 		'content'     => renderDetail($sw, $cat),
 	]);
 }

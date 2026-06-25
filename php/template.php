@@ -3,7 +3,6 @@
 function layout(array $vars): void {
 	$title       = $vars['title'];
 	$description = $vars['description'];
-	$basePath    = $vars['basePath'];
 	$content     = $vars['content'];
 	?>
 <!DOCTYPE html>
@@ -12,24 +11,24 @@ function layout(array $vars): void {
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title><?= htmlspecialchars($title) ?></title>
-	<link rel="icon" href="<?= $basePath ?>images/icon.webp">
-	<link rel="apple-touch-icon" href="<?= $basePath ?>images/icon.webp">
+	<link rel="icon" href="/images/icon.webp">
+	<link rel="apple-touch-icon" href="/images/icon.webp">
 	<meta name="description" content="<?= htmlspecialchars($description) ?>">
-	<link rel="stylesheet" href="<?= $basePath ?>css/style.css">
+	<link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
 	<header class="site-header">
 		<div class="container flex">
-			<a href="<?= $basePath ?>index.html" class="site-title flex">
-				<img src="<?= $basePath ?>images/icon.webp" alt="Phần mềm miễn phí" width="32" height="32">
+			<a href="/" class="site-title flex">
+				<img src="/images/icon.webp" alt="Phần mềm miễn phí" width="32" height="32">
 				Phần mềm miễn phí
 			</a>
 			<nav class="site-nav flex">
-				<a href="<?= $basePath ?>index.html#van-phong">Văn phòng</a>
-				<a href="<?= $basePath ?>index.html#tien-ich">Tiện ích</a>
-				<a href="<?= $basePath ?>index.html#media">Media</a>
-				<a href="<?= $basePath ?>index.html#mang">Mạng</a>
-				<a href="<?= $basePath ?>index.html#bao-mat">Bảo mật</a>
+				<a href="/#van-phong">Văn phòng</a>
+				<a href="/#tien-ich">Tiện ích</a>
+				<a href="/#media">Media</a>
+				<a href="/#mang">Mạng</a>
+				<a href="/#bao-mat">Bảo mật</a>
 			</nav>
 		</div>
 	</header>
@@ -108,9 +107,9 @@ function renderDetail(array $sw, array $cat): string {
 	return '
 <div class="detail-header">
 	<div class="breadcrumb">
-		<a href="../index.html">Trang chủ</a>
+		<a href="/">Trang chủ</a>
 		<span class="separator">/</span>
-		<a href="../index.html#' . $sw['cat'] . '">' . htmlspecialchars($cat['name']) . '</a>
+		<a href="/#' . $sw['cat'] . '">' . htmlspecialchars($cat['name']) . '</a>
 		<span class="separator">/</span>
 		<span>' . htmlspecialchars($sw['name']) . '</span>
 	</div>
