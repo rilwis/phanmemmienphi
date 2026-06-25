@@ -14,7 +14,7 @@ function layout(array $vars): void {
 	<link rel="icon" href="/images/icon.webp">
 	<link rel="apple-touch-icon" href="/images/icon.webp">
 	<meta name="description" content="<?= htmlspecialchars($description) ?>">
-	<link rel="stylesheet" href="/css/style.css">
+	<link rel="stylesheet" href="/css/style.css?v=<?= filemtime(__DIR__ . '/../css/style.css') ?>">
 </head>
 <body>
 	<header class="site-header">
