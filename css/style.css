@@ -97,11 +97,10 @@ html {
 }
 
 body {
-  font-family: ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji',
-    'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  font-family: system-ui, sans-serif;
   color: var(--text);
   background: var(--bg);
-  line-height: 1.5; /* Tailwind leading-normal */
+  line-height: 1.5;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -348,13 +347,11 @@ img {
 }
 
 .detail-icon {
-  width: 72px;
-  height: 72px;
+  width: var(--16);
+  height: var(--16);
   border-radius: var(--rounded-2xl);
   flex-shrink: 0;
   object-fit: contain;
-  background: var(--white);
-  border: 1px solid var(--border);
 }
 
 .detail-name {
@@ -391,10 +388,11 @@ img {
    Screenshot
    ============================================ */
 .screenshot-placeholder {
-  width: 100%;
-  border: 1px solid var(--border);
-  border-radius: var(--rounded-xl);
+  max-width: 100%;
+  height: auto;
+  display: block;
   margin-bottom: var(--6);
+  margin-inline: auto;
 }
 
 /* ============================================
