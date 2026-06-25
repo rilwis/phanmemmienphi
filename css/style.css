@@ -39,6 +39,10 @@
 	--rounded-2xl: 1rem;
 }
 
+@view-transition {
+	navigation: auto;
+}
+
 .flex {
 	display: flex;
 }
