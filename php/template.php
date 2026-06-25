@@ -11,9 +11,15 @@ function layout(array $vars): void {
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title><?= htmlspecialchars($title) ?></title>
+	<meta name="description" content="<?= htmlspecialchars($description) ?>">
+
 	<link rel="icon" href="/images/icon.webp">
 	<link rel="apple-touch-icon" href="/images/icon.webp">
-	<meta name="description" content="<?= htmlspecialchars($description) ?>">
+	<meta name="msapplication-TileImage" content="/images/icon.webp">
+
+	<meta property="og:image" content="/images/banner.webp">
+	<meta name="robots" content="max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+
 	<link rel="stylesheet" href="/css/style.css?v=<?= filemtime(__DIR__ . '/../css/style.css') ?>">
 </head>
 <body>
