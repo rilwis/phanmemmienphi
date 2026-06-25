@@ -30,7 +30,7 @@
       const items = SOFTWARE.filter((s) => s.cat === catId);
       if (items.length === 0) continue;
 
-      html += `<section class="category-section">
+      html += `<section class="category-section" id="${catId}">
         <div class="category-header">
           <div class="category-icon" style="background: ${COLORS[colorIdx % COLORS.length]}">${cat.name.charAt(0)}</div>
           <h2>${cat.name}</h2>
